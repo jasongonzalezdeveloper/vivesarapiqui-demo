@@ -6,13 +6,17 @@ import clsx from "clsx";
  * (imagen + enlace) desde el backend o desde un servidor de anuncios.
  */
 
-/** Banner móvil 320 × 50. `fixed` lo pega al borde inferior de la pantalla. */
+/**
+ * Banner 320 × 50 pegado abajo. Se muestra en todo ancho donde no caben los
+ * banners laterales (menos de 1280 px), así siempre hay un espacio publicitario.
+ * `fixed` lo pega al borde inferior de la pantalla.
+ */
 export function MobileAdBar({ fixed = true }: { fixed?: boolean }) {
   return (
     <aside
       aria-label="Publicidad"
       className={clsx(
-        "z-30 flex h-[62px] shrink-0 items-center justify-center border-t border-selva-950 bg-selva-900 lg:hidden",
+        "z-30 flex h-[62px] shrink-0 items-center justify-center border-t border-selva-950 bg-selva-900 xl:hidden",
         fixed && "fixed inset-x-0 bottom-0",
       )}
     >

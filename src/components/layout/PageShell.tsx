@@ -10,7 +10,7 @@ export function PageShell({ children, ads = true }: { children: ReactNode; ads?:
   return (
     <>
       <FlagStripe />
-      <div className={ads ? "flex flex-1 justify-center gap-8 px-0 pb-[62px] lg:px-6 lg:py-8 lg:pb-8" : "flex flex-1 justify-center lg:py-8"}>
+      <div className={ads ? "flex flex-1 justify-center gap-8 px-0 pb-[62px] lg:px-6 lg:pt-8 lg:pb-[94px] xl:pb-8" : "flex flex-1 justify-center lg:py-8"}>
         {ads && <SideAd variant="a" />}
         <main className="w-full max-w-2xl min-w-0">{children}</main>
         {ads && <SideAd variant="b" />}

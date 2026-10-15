@@ -19,10 +19,8 @@ export function EventSheet({ events, selected, title, subtitle, onSelect, onClos
   return (
     <section
       aria-label={selected ? "Detalle del evento" : "Lista de eventos"}
-      className="absolute inset-x-0 bottom-0 z-30 rounded-t-[20px] bg-white pt-2 pb-3.5 shadow-[0_-6px_24px_rgb(16_48_42/0.16)] lg:hidden"
+      className="absolute inset-x-0 bottom-0 z-30 rounded-t-[20px] bg-white pt-4 pb-3.5 shadow-[0_-6px_24px_rgb(16_48_42/0.16)] lg:hidden"
     >
-      <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-[#c9d3c4]" />
-
       {selected ? (
         <>
           <button
