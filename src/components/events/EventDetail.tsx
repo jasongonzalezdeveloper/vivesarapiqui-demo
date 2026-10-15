@@ -27,7 +27,7 @@ import { directionsUrl, wazeUrl } from "@/lib/maps";
 import { downloadIcs } from "@/lib/calendar";
 import { useFavorite } from "@/lib/favorites";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
-import { CategoryLabel, DateTile } from "./EventBits";
+import { CategoryLabel, CategoryPill, DateTile } from "./EventBits";
 
 function initials(name: string) {
   return name
@@ -136,9 +136,7 @@ export function EventDetail({ eventId }: { eventId: string }) {
 
       <div className="flex flex-col gap-4 px-5 pt-5 lg:px-6">
         <div className="flex flex-wrap gap-2">
-          <span className="rounded-full bg-celeste-100 px-2.5 py-1 text-xs font-bold tracking-[0.05em] text-rio uppercase">
-            {base.category}
-          </span>
+          <CategoryPill category={base.category} />
           {event && (
             <span
               className={clsx(

@@ -1,12 +1,6 @@
-export type EventCategory =
-  | "Cultura"
-  | "Música"
-  | "Feria"
-  | "Deporte"
-  | "Naturaleza"
-  | "Aventura"
-  | "Gastronomía"
-  | "Tradición";
+import type { EventCategory } from "./categories";
+
+export type { EventCategory };
 
 export type SarapiquiEvent = {
   id: string;
@@ -38,7 +32,7 @@ export const EVENTS: SarapiquiEvent[] = [
   {
     id: "mercado-nocturno-artesanias",
     name: "Mercado Nocturno de Artesanías",
-    category: "Cultura",
+    category: "Empresas",
     organizer: "Asociación de Artesanos de Sarapiquí",
     organizerPhone: "+50600000000",
     place: "Puerto Viejo",
@@ -57,7 +51,7 @@ export const EVENTS: SarapiquiEvent[] = [
   {
     id: "caminata-aves-chilamate",
     name: "Caminata de avistamiento de aves",
-    category: "Naturaleza",
+    category: "Turismo",
     organizer: "Club de Observadores de Aves",
     organizerPhone: "+50600000000",
     place: "Chilamate",
@@ -75,7 +69,7 @@ export const EVENTS: SarapiquiEvent[] = [
   {
     id: "feria-del-agricultor",
     name: "Feria del Agricultor",
-    category: "Feria",
+    category: "Comida",
     organizer: "Centro Agrícola Cantonal",
     organizerPhone: "+50600000000",
     place: "Puerto Viejo",
@@ -94,7 +88,7 @@ export const EVENTS: SarapiquiEvent[] = [
   {
     id: "descenso-rio-sarapiqui",
     name: "Descenso recreativo del río",
-    category: "Aventura",
+    category: "Turismo",
     organizer: "Operadores de Rafting de La Virgen",
     organizerPhone: "+50600000000",
     place: "La Virgen",
@@ -111,9 +105,28 @@ export const EVENTS: SarapiquiEvent[] = [
     photos: 3,
   },
   {
+    id: "carrera-5k-la-virgen",
+    name: "Carrera 5K Río Sarapiquí",
+    category: "Deporte",
+    organizer: "Comité de Deportes de La Virgen",
+    organizerPhone: "+50600000000",
+    place: "La Virgen",
+    address: "Salida y meta en la plaza de deportes de La Virgen",
+    lat: 10.3958,
+    lng: -84.1212,
+    dayOffset: 4,
+    keepInMonth: true,
+    startTime: "07:00",
+    endTime: "10:00",
+    price: "Inscripción ₡8 000",
+    description:
+      "Carrera recreativa de 5 km a lo largo del río, con categorías por edad y caminata familiar de 2 km.",
+    photos: 3,
+  },
+  {
     id: "cabalgata-horquetas",
     name: "Cabalgata Tradicional",
-    category: "Tradición",
+    category: "Cultura",
     organizer: "Comité de Festejos de Horquetas",
     organizerPhone: "+50600000000",
     place: "Horquetas",
@@ -131,7 +144,7 @@ export const EVENTS: SarapiquiEvent[] = [
   {
     id: "festival-cacao",
     name: "Festival del Cacao y el Chocolate",
-    category: "Gastronomía",
+    category: "Comida",
     organizer: "Productores de Cacao de Sarapiquí",
     organizerPhone: "+50600000000",
     place: "San Miguel",
@@ -150,7 +163,7 @@ export const EVENTS: SarapiquiEvent[] = [
   {
     id: "noche-de-marimba",
     name: "Noche de Marimba y Cimarrona",
-    category: "Música",
+    category: "Cultura",
     organizer: "Casa de la Cultura de Sarapiquí",
     organizerPhone: "+50600000000",
     place: "Puerto Viejo",
@@ -186,7 +199,7 @@ export const EVENTS: SarapiquiEvent[] = [
   {
     id: "expoferia-ganadera",
     name: "Expoferia Ganadera",
-    category: "Feria",
+    category: "Empresas",
     organizer: "Cámara de Ganaderos de la zona",
     organizerPhone: "+50600000000",
     place: "Río Frío",

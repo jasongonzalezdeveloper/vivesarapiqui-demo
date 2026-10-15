@@ -15,7 +15,7 @@ export function DateFilterChips({
   return (
     <nav
       aria-label="Filtrar eventos por fecha"
-      className="no-scrollbar flex h-15 shrink-0 items-center gap-2 overflow-x-auto border-b border-linea bg-white px-4 lg:px-6"
+      className="no-scrollbar flex h-14 shrink-0 items-center gap-2 overflow-x-auto border-b border-linea bg-white px-4 lg:px-6"
     >
       {DATE_FILTERS.map((f) => {
         const active = f.id === value;

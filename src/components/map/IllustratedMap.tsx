@@ -14,6 +14,7 @@ const POSITIONS: Record<string, [number, number]> = {
   "caminata-aves-chilamate": [142, 262],
   "feria-del-agricultor": [178, 204],
   "descenso-rio-sarapiqui": [92, 372],
+  "carrera-5k-la-virgen": [118, 344],
   "cabalgata-horquetas": [300, 372],
   "festival-cacao": [60, 410],
   "noche-de-marimba": [236, 192],
@@ -134,7 +135,7 @@ export function IllustratedMap({ events, selectedId, onSelect }: EventsMapProps)
             <button
               key={event.id}
               type="button"
-              aria-label={`${event.name}, ${event.when}, ${event.place}`}
+              aria-label={`${event.category}: ${event.name}, ${event.when}, ${event.place}`}
               aria-pressed={selected}
               onClick={() => onSelect(event.id)}
               className="absolute flex h-14 w-12 -translate-x-1/2 -translate-y-full cursor-pointer items-end justify-center pb-2"
@@ -144,7 +145,7 @@ export function IllustratedMap({ events, selectedId, onSelect }: EventsMapProps)
                 zIndex: selected ? 20 : event.isToday ? 15 : 10,
               }}
             >
-              <EventPin day={event.day} today={event.isToday} selected={selected} />
+              <EventPin day={event.day} color={event.color} today={event.isToday} selected={selected} />
             </button>
           );
         })}

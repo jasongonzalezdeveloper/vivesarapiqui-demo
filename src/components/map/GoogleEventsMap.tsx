@@ -34,11 +34,11 @@ export function GoogleEventsMap({ events, selectedId, onSelect }: EventsMapProps
             <AdvancedMarker
               key={event.id}
               position={{ lat: event.lat, lng: event.lng }}
-              title={`${event.name}, ${event.when}`}
+              title={`${event.category}: ${event.name}, ${event.when}`}
               zIndex={event.id === selectedId ? 20 : event.isToday ? 15 : 10}
               onClick={() => onSelect(event.id)}
             >
-              <EventPin day={event.day} today={event.isToday} selected={event.id === selectedId} />
+              <EventPin day={event.day} color={event.color} today={event.isToday} selected={event.id === selectedId} />
             </AdvancedMarker>
           ))}
           <PanToSelected events={events} selectedId={selectedId} />

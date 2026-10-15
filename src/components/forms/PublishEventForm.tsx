@@ -4,8 +4,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Info, LocateFixed, Plus, X } from "lucide-react";
 import { Field, FormSuccess, inputClass, textareaClass } from "@/components/ui/Field";
+import { CATEGORIES, type EventCategory } from "@/data/categories";
 
-const CATEGORIES = ["Cultura", "Música", "Feria", "Deporte", "Naturaleza", "Aventura", "Gastronomía", "Tradición", "Religioso"];
 const DISTRICTS = ["Puerto Viejo", "La Virgen", "Las Horquetas", "Llanuras del Gaspar", "Cureña"];
 const MAX_PHOTOS = 6;
 
@@ -26,6 +26,7 @@ export function PublishEventForm() {
   const [sent, setSent] = useState(false);
   const [photos, setPhotos] = useState<{ name: string; url: string }[]>([]);
   const [location, setLocation] = useState<string | null>(null);
+  const [category, setCategory] = useState<EventCategory | null>(null);
 
   const photosRef = useRef(photos);
   useEffect(() => {
@@ -81,13 +82,43 @@ export function PublishEventForm() {
         <Field label="¿Quién lo organiza?">
           <input name="organizador" required placeholder="Persona, grupo o institución" className={inputClass} />
         </Field>
-        <Field label="Categoría">
-          <select name="categoria" className={inputClass}>
-            {CATEGORIES.map((c) => (
-              <option key={c}>{c}</option>
-            ))}
-          </select>
-        </Field>
+        <fieldset className="flex flex-col gap-2">
+          <legend className="mb-1.5 text-sm font-bold">Tipo de evento</legend>
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            {CATEGORIES.map((c, i) => {
+              const Icon = c.icon;
+              const checked = category === c.id;
+              return (
+                <label
+                  key={c.id}
+                  style={checked ? { borderColor: c.color, backgroundColor: c.tint } : undefined}
+                  className="flex min-h-13 cursor-pointer items-center gap-3 rounded-xl border-[1.5px] border-[#d9d4c7] bg-white px-3 has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-selva-700/30"
+                >
+                  <input
+                    type="radio"
+                    name="tipo"
+                    value={c.id}
+                    required={i === 0}
+                    checked={checked}
+                    onChange={() => setCategory(c.id)}
+                    className="sr-only"
+                  />
+                  <span
+                    style={{ backgroundColor: c.color }}
+                    className="flex size-8 shrink-0 items-center justify-center rounded-full text-white"
+                  >
+                    <Icon size={16} strokeWidth={2.4} aria-hidden="true" />
+                  </span>
+                  <span className="flex flex-col leading-tight">
+                    <span className="text-[15px] font-bold">{c.label}</span>
+                    <span className="text-xs text-gris">{c.hint}</span>
+                  </span>
+                </label>
+              );
+            })}
+          </div>
+          <span className="text-xs text-gris">El color del tipo es el color del pin en el mapa.</span>
+        </fieldset>
       </Section>
 
       <Section title="2 · Fecha y hora">

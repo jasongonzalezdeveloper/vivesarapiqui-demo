@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import type { EventView } from "@/lib/eventView";
-import { DateTile } from "./EventBits";
+import { CategoryTag, DateTile } from "./EventBits";
 
 type Props = {
   events: EventView[];
@@ -44,6 +44,7 @@ export function EventListPanel({ events, selectedId, title, subtitle, onSelect }
             >
               <DateTile event={event} className="h-14.5 w-13 justify-center border border-linea" />
               <span className="flex min-w-0 flex-col gap-0.5">
+                <CategoryTag category={event.category} />
                 <span className="text-[15px] leading-tight font-bold">{event.name}</span>
                 <span className="text-[13px] text-tinta-2">
                   <span className={event.isToday ? "font-bold text-rana" : undefined}>{event.dayLabel}</span> ·{" "}

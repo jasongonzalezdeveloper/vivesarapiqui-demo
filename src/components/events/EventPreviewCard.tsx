@@ -3,7 +3,7 @@
 import { X } from "lucide-react";
 import type { EventView } from "@/lib/eventView";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
-import { CategoryLabel, DayBadge, EventActions, EventFacts } from "./EventBits";
+import { CategoryTag, DayBadge, EventActions, EventFacts } from "./EventBits";
 
 /** Tarjeta flotante sobre el mapa en escritorio. */
 export function EventPreviewCard({ event, onClose }: { event: EventView; onClose: () => void }) {
@@ -30,7 +30,7 @@ export function EventPreviewCard({ event, onClose }: { event: EventView; onClose
       </button>
       <div className="flex flex-col gap-2.5 p-4">
         <div className="flex items-center gap-2">
-          <CategoryLabel>{event.category}</CategoryLabel>
+          <CategoryTag category={event.category} />
           <DayBadge event={event} />
         </div>
         <h2 className="font-display text-xl leading-tight font-extrabold">{event.name}</h2>

@@ -62,13 +62,13 @@ El sitio se exporta como HTML estático (`output: "export"` en `next.config.ts`)
 
 | Ruta | Qué tiene |
 | --- | --- |
-| `/` | Mapa con los eventos de hoy, mañana, esta semana, este mes (por defecto) y próximos. Panel inferior en el teléfono; lista + mapa en escritorio. |
+| `/` | Mapa con los eventos de hoy, mañana, esta semana, este mes (por defecto) y próximos, filtrables por tipo (Turismo, Deporte, Comida, Empresas, Cultura). El color del pin indica el tipo; los de hoy llevan borde rojo y la etiqueta "HOY". Panel inferior plegable en el teléfono; lista + mapa en escritorio. |
 | `/eventos/[id]` | Detalle: fotos, organizador, fecha, hora, dirección exacta, Google Maps / Waze, agregar al calendario (.ics), compartir y favoritos. |
 | `/historia` | Historia del cantón, bandera, línea del tiempo y distritos. |
 | `/comercios` | Directorio con búsqueda, categorías y comercio destacado. |
 | `/galeria` | Álbumes de eventos recientes con visor de fotos. |
 | `/contacto` | Formulario de contacto y paquetes de publicidad. |
-| `/publicar` | Formulario para que los organizadores envíen eventos (con revisión). |
+| `/publicar` | Formulario para que los organizadores envíen eventos (con revisión) y elijan su tipo. |
 
 Publicidad: banner fijo de 320 × 50 abajo en el teléfono y banners laterales de 160 × 600 solo en escritorio (`src/components/ads/AdSlots.tsx`).
 

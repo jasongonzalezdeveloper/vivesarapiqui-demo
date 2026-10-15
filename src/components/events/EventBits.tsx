@@ -2,6 +2,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { Calendar, MapPin, Navigation, User } from "lucide-react";
 import type { EventView } from "@/lib/eventView";
+import { getCategory, type EventCategory } from "@/data/categories";
 import { directionsUrl } from "@/lib/maps";
 import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
 
@@ -14,6 +15,35 @@ export function DayBadge({ event }: { event: EventView }) {
       )}
     >
       {event.dayLabel}
+    </span>
+  );
+}
+
+/** Tipo de evento con su color (el mismo del pin en el mapa). */
+export function CategoryTag({ category, className }: { category: EventCategory; className?: string }) {
+  const c = getCategory(category);
+  return (
+    <span
+      style={{ color: c.color }}
+      className={clsx("inline-flex items-center gap-1.5 text-[11px] font-bold tracking-[0.05em] uppercase", className)}
+    >
+      <span style={{ backgroundColor: c.color }} className="size-2 shrink-0 rounded-full" aria-hidden="true" />
+      {c.label}
+    </span>
+  );
+}
+
+/** Píldora con el tipo de evento, para la página de detalle. */
+export function CategoryPill({ category }: { category: EventCategory }) {
+  const c = getCategory(category);
+  const Icon = c.icon;
+  return (
+    <span
+      style={{ backgroundColor: c.tint, color: c.color }}
+      className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold tracking-[0.05em] uppercase"
+    >
+      <Icon size={13} strokeWidth={2.5} aria-hidden="true" />
+      {c.label}
     </span>
   );
 }
