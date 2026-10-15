@@ -6,7 +6,7 @@ import { DATE_FILTERS, DEFAULT_FILTER, filterRangeLabel, matchesFilter, type Dat
 import { toEventView } from "@/lib/eventView";
 import { useToday } from "@/lib/useToday";
 import { FlagStripe } from "@/components/brand/FlagStripe";
-import { MobileAdBar, SideAd } from "@/components/ads/AdSlots";
+import { BottomAdBar, SideAd } from "@/components/ads/AdSlots";
 import { EventsMap } from "@/components/map/EventsMap";
 import { DateFilterChips } from "./DateFilterChips";
 import { EventSheet } from "./EventSheet";
@@ -74,7 +74,7 @@ export function EventExplorer() {
         <SideAd variant="b" sticky={false} />
       </div>
 
-      <MobileAdBar fixed={false} />
+      <BottomAdBar fixed={false} />
     </div>
   );
 }
