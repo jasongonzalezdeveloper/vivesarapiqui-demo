@@ -94,7 +94,7 @@ export function EventDetail({ eventId }: { eventId: string }) {
           label={`Foto ${photo + 1} de ${base.photos} de ${base.name}`}
           className="flex h-68 items-center justify-center lg:h-80"
         >
-          <span className="rounded-full bg-white/85 px-3 py-1.5 text-[13px] font-bold text-[#3e6b5c]">
+          <span className="rounded-full bg-white/85 px-3 py-1.5 text-[13px] font-bold text-tinta-2">
             [Foto {photo + 1} del evento]
           </span>
         </PhotoPlaceholder>
@@ -136,20 +136,20 @@ export function EventDetail({ eventId }: { eventId: string }) {
 
       <div className="flex flex-col gap-4 px-5 pt-5 lg:px-6">
         <div className="flex flex-wrap gap-2">
-          <span className="rounded-full bg-celeste-100 px-2.5 py-1 text-xs font-bold tracking-[0.05em] text-[#1d5f69] uppercase">
+          <span className="rounded-full bg-celeste-100 px-2.5 py-1 text-xs font-bold tracking-[0.05em] text-rio uppercase">
             {base.category}
           </span>
           {event && (
             <span
               className={clsx(
                 "rounded-full px-2.5 py-1 text-xs font-bold",
-                event.isToday ? "bg-rana text-white" : "bg-lima text-tinta",
+                event.isToday ? "bg-rana text-white" : "bg-celeste-100 text-rio",
               )}
             >
               {event.when}
             </span>
           )}
-          <span className="rounded-full border border-[#cbd6c6] bg-white px-2.5 py-1 text-xs font-bold">{base.price}</span>
+          <span className="rounded-full border border-[#d9d4c7] bg-white px-2.5 py-1 text-xs font-bold">{base.price}</span>
         </div>
 
         <div className="flex items-start justify-between gap-4">
@@ -159,7 +159,7 @@ export function EventDetail({ eventId }: { eventId: string }) {
               type="button"
               aria-pressed={fav}
               onClick={toggleFav}
-              className="flex h-11 items-center gap-2 rounded-xl border border-linea px-3.5 text-sm font-bold text-rana hover:bg-menta"
+              className="flex h-11 items-center gap-2 rounded-xl border border-linea px-3.5 text-sm font-bold text-rana hover:bg-arena-200"
             >
               <Heart size={18} fill={fav ? "currentColor" : "none"} aria-hidden="true" />
               {fav ? "Guardado" : "Guardar"}
@@ -167,7 +167,7 @@ export function EventDetail({ eventId }: { eventId: string }) {
             <button
               type="button"
               onClick={share}
-              className="flex h-11 items-center gap-2 rounded-xl border border-linea px-3.5 text-sm font-bold hover:bg-menta"
+              className="flex h-11 items-center gap-2 rounded-xl border border-linea px-3.5 text-sm font-bold hover:bg-arena-200"
             >
               <Share2 size={18} aria-hidden="true" />
               {shared ? "Enlace copiado" : "Compartir"}
@@ -186,7 +186,7 @@ export function EventDetail({ eventId }: { eventId: string }) {
           <a
             href={`tel:${base.organizerPhone}`}
             aria-label="Llamar al organizador"
-            className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-selva-100 text-selva-700"
+            className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-arena-200 text-selva-700"
           >
             <Phone size={20} aria-hidden="true" />
           </a>
@@ -219,7 +219,7 @@ export function EventDetail({ eventId }: { eventId: string }) {
               href={wazeUrl(base)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-11.5 flex-1 items-center justify-center rounded-xl border-[1.5px] border-selva-700 text-sm font-bold text-selva-900 hover:bg-selva-100"
+              className="flex h-11.5 flex-1 items-center justify-center rounded-xl border-[1.5px] border-selva-700 text-sm font-bold text-selva-900 hover:bg-arena-200"
             >
               Abrir en Waze
             </a>
@@ -301,7 +301,7 @@ function ActionTile({
   href?: string;
 }) {
   const className =
-    "flex h-18 flex-col items-center justify-center gap-1.5 rounded-[14px] border border-linea bg-white text-xs font-semibold hover:bg-menta";
+    "flex h-18 flex-col items-center justify-center gap-1.5 rounded-[14px] border border-linea bg-white text-xs font-semibold hover:bg-arena-200";
   const content = (
     <>
       <Icon size={20} className="text-selva-700" aria-hidden="true" />

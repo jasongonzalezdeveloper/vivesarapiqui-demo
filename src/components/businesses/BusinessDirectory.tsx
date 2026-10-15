@@ -29,7 +29,7 @@ export function BusinessDirectory() {
 
   return (
     <div className="flex flex-col gap-4">
-      <label className="flex h-12 items-center gap-2.5 rounded-xl border border-[#cbd6c6] bg-white px-3.5">
+      <label className="flex h-12 items-center gap-2.5 rounded-xl border border-[#d9d4c7] bg-white px-3.5">
         <Search size={20} className="text-gris" aria-hidden="true" />
         <span className="sr-only">Buscar comercios</span>
         <input
@@ -50,7 +50,7 @@ export function BusinessDirectory() {
             onClick={() => setCategory(c)}
             className={clsx(
               "h-10 shrink-0 rounded-full border px-4 text-sm font-semibold",
-              c === category ? "border-selva-700 bg-selva-700 text-white" : "border-[#cbd6c6] bg-white hover:bg-selva-100",
+              c === category ? "border-selva-700 bg-selva-700 text-white" : "border-[#d9d4c7] bg-white hover:bg-arena-200",
             )}
           >
             {c}
@@ -65,7 +65,7 @@ export function BusinessDirectory() {
           </span>
         </PhotoPlaceholder>
         <div className="flex flex-col gap-1.5 px-4 pt-3.5 pb-4">
-          <span className="text-xs font-bold tracking-[0.05em] text-selva-700 uppercase">
+          <span className="text-xs font-bold tracking-[0.05em] text-rio uppercase">
             Restaurante · {featured.place}
           </span>
           <h2 className="font-display text-[22px] font-extrabold">{featured.name}</h2>
@@ -107,7 +107,7 @@ export function BusinessDirectory() {
           <li key={b.id} className="flex gap-3 rounded-[14px] border border-linea bg-white p-3">
             <PhotoPlaceholder className="size-21 shrink-0 rounded-[10px]" />
             <div className="flex min-w-0 flex-1 flex-col gap-0.5">
-              <span className="text-[11px] font-bold tracking-[0.05em] text-selva-700 uppercase">
+              <span className="text-[11px] font-bold tracking-[0.05em] text-rio uppercase">
                 {b.category} · {b.place}
               </span>
               <span className="text-base font-bold">{b.name}</span>
@@ -129,7 +129,7 @@ export function BusinessDirectory() {
         )}
       </ul>
 
-      <Link href="/contacto" className="flex items-center gap-3.5 rounded-2xl bg-celeste-100 p-4 hover:bg-[#d3ebee]">
+      <Link href="/contacto" className="flex items-center gap-3.5 rounded-2xl bg-celeste-100 p-4 hover:bg-[#d6e9ee]">
         <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-selva-700 text-white">
           <Plus size={20} strokeWidth={2.4} aria-hidden="true" />
         </span>
@@ -158,7 +158,7 @@ function IconLink({
       href={href}
       aria-label={label}
       {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-      className="flex h-9 w-11 items-center justify-center rounded-[10px] bg-selva-100 text-selva-700 hover:bg-lima"
+      className="flex h-9 w-11 items-center justify-center rounded-[10px] bg-arena-200 text-selva-700 hover:bg-linea"
     >
       <Icon size={18} aria-hidden="true" />
     </a>

@@ -14,7 +14,7 @@ export function EventPin({
     <span
       className={clsx(
         "flex rotate-[-45deg] items-center justify-center rounded-[50%_50%_50%_0] border-[3px] border-white shadow-[0_3px_8px_rgb(16_48_42/0.35)] transition-all",
-        selected ? "size-[42px] bg-lima text-tinta" : today ? "size-[34px] bg-rana text-white" : "size-[34px] bg-selva-700 text-white",
+        selected ? "size-[42px] bg-rio text-white" : today ? "size-[34px] bg-rana text-white" : "size-[34px] bg-selva-700 text-white",
       )}
     >
       <span className="rotate-45 text-[13px] leading-none font-extrabold">{day}</span>

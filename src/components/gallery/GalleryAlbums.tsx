@@ -50,7 +50,7 @@ export function GalleryAlbums() {
             onClick={() => setMonth(m)}
             className={clsx(
               "h-10 rounded-full border px-4 text-sm font-semibold",
-              m === month ? "border-selva-700 bg-selva-700 font-bold text-white" : "border-[#cbd6c6] bg-white hover:bg-selva-100",
+              m === month ? "border-selva-700 bg-selva-700 font-bold text-white" : "border-[#d9d4c7] bg-white hover:bg-arena-200",
             )}
           >
             {m}
@@ -65,7 +65,7 @@ export function GalleryAlbums() {
           <section key={album.id} className="flex flex-col gap-2.5">
             <div className="flex items-end justify-between gap-3">
               <div className="flex flex-col gap-0.5">
-                <span className="text-xs font-bold tracking-[0.05em] text-selva-700 uppercase">
+                <span className="text-xs font-bold tracking-[0.05em] text-rio uppercase">
                   {album.dateLabel} · {album.place}
                 </span>
                 <h2 className="font-display text-xl font-extrabold">{album.title}</h2>
@@ -103,7 +103,7 @@ export function GalleryAlbums() {
       })}
 
       <Link href="/contacto" className="flex items-center gap-3.5 rounded-2xl bg-selva-700 p-4 text-white hover:bg-selva-900">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-lima text-tinta">
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-white text-selva-900">
           <Camera size={22} aria-hidden="true" />
         </span>
         <span className="flex flex-col">
@@ -129,7 +129,7 @@ export function GalleryAlbums() {
           </div>
           <div className="relative flex flex-1 items-center justify-center p-4">
             <div className={clsx("flex aspect-[4/3] w-full max-w-3xl items-center justify-center rounded-xl", tone(viewer.album))}>
-              <span className="rounded-full bg-white/85 px-3 py-1.5 text-[13px] font-bold text-[#3e6b5c]">
+              <span className="rounded-full bg-white/85 px-3 py-1.5 text-[13px] font-bold text-tinta-2">
                 [Foto {viewer.index + 1}]
               </span>
             </div>

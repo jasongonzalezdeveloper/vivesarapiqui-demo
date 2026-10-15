@@ -101,8 +101,8 @@ export default function HistoriaPage() {
               {MILESTONES.map((m) => (
                 <li key={m.year} className="flex gap-3.5">
                   <div className="flex w-5 shrink-0 flex-col items-center">
-                    <span className="mt-1 size-3.5 rounded-full border-[3px] border-lima bg-selva-700" />
-                    <span className="w-0.5 flex-1 bg-[#c9d8bf]" />
+                    <span className="mt-1 size-3.5 rounded-full border-[3px] border-celeste bg-selva-700" />
+                    <span className="w-0.5 flex-1 bg-[#ddd7c9]" />
                   </div>
                   <div className="flex flex-col gap-1 pb-5">
                     <span className="font-display text-xl font-extrabold text-selva-700">{m.year}</span>
@@ -118,7 +118,7 @@ export default function HistoriaPage() {
             <h2 className="font-display text-2xl font-extrabold">Sus cinco distritos</h2>
             <ul className="flex flex-col rounded-[14px] border border-linea bg-white">
               {DISTRICTS.map((d) => (
-                <li key={d.name} className="flex items-center gap-3 border-b border-[#eef2ea] px-4 py-3.5 last:border-b-0">
+                <li key={d.name} className="flex items-center gap-3 border-b border-[#efebe2] px-4 py-3.5 last:border-b-0">
                   <svg width="18" height="18" viewBox="-10 -10 20 20" aria-hidden="true">
                     <path d={STAR} fill="#1e7b66" />
                   </svg>
@@ -129,7 +129,7 @@ export default function HistoriaPage() {
             </ul>
           </section>
 
-          <Link href="/contacto" className="flex flex-col gap-1.5 rounded-2xl bg-selva-700 p-4.5 text-white hover:bg-selva-900">
+          <Link href="/contacto" className="flex flex-col gap-1.5 rounded-2xl bg-rio p-4.5 text-white hover:bg-rio-900">
             <span className="font-display text-xl font-extrabold">¿Tiene fotos o historias de Sarapiquí?</span>
             <span className="text-sm">Compártalas con nosotros y ayúdenos a construir la memoria del cantón.</span>
           </Link>

@@ -10,7 +10,7 @@ export function DayBadge({ event }: { event: EventView }) {
     <span
       className={clsx(
         "rounded-full px-2 py-0.5 text-[11px] font-bold",
-        event.isToday ? "bg-rana text-white" : "bg-lima text-tinta",
+        event.isToday ? "bg-rana text-white" : "bg-celeste-100 text-rio",
       )}
     >
       {event.dayLabel}
@@ -20,7 +20,7 @@ export function DayBadge({ event }: { event: EventView }) {
 
 export function CategoryLabel({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <span className={clsx("text-[11px] font-bold tracking-[0.05em] text-selva-700 uppercase", className)}>
+    <span className={clsx("text-[11px] font-bold tracking-[0.05em] text-rio uppercase", className)}>
       {children}
     </span>
   );
@@ -30,7 +30,7 @@ export function CategoryLabel({ children, className }: { children: React.ReactNo
 export function DateTile({ event, className }: { event: EventView; className?: string }) {
   return (
     <span className={clsx("flex flex-col items-center rounded-md bg-white px-2 py-1 leading-none", className)}>
-      <span className={clsx("text-[10px] font-bold uppercase", event.isToday ? "text-rana" : "text-selva-700")}>
+      <span className={clsx("text-[10px] font-bold uppercase", event.isToday ? "text-rana" : "text-rio")}>
         {event.month}
       </span>
       <span className="font-display text-lg font-extrabold">{event.day}</span>
@@ -78,7 +78,7 @@ export function EventActions({ event, size = "md" }: { event: EventView; size?: 
         target="_blank"
         rel="noopener noreferrer"
         className={clsx(
-          "flex flex-1 items-center justify-center gap-2 rounded-xl border-[1.5px] border-selva-700 bg-white font-bold text-selva-900 hover:bg-selva-100",
+          "flex flex-1 items-center justify-center gap-2 rounded-xl border-[1.5px] border-selva-700 bg-white font-bold text-selva-900 hover:bg-arena-200",
           h,
         )}
       >

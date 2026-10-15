@@ -118,7 +118,7 @@ export function PublishEventForm() {
         </Field>
         <div className="flex flex-col gap-1.5">
           <span className="text-sm font-bold">Marque el punto en el mapa</span>
-          <div className="relative h-44 overflow-hidden rounded-xl border border-[#d5decf] bg-mapa">
+          <div className="relative h-44 overflow-hidden rounded-xl border border-linea bg-mapa">
             <svg width="100%" height="100%" viewBox="0 0 320 170" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
               <path d="M40 170C70 120 110 90 160 80S250 40 290 0" fill="none" stroke="#a9dee7" strokeWidth="10" strokeLinecap="round" />
               <path d="M0 120C80 110 200 120 320 100" fill="none" stroke="#fff" strokeWidth="6" />
@@ -133,7 +133,7 @@ export function PublishEventForm() {
           <button
             type="button"
             onClick={useMyLocation}
-            className="flex h-11 items-center justify-center gap-2 rounded-xl border-[1.5px] border-selva-700 text-sm font-bold text-selva-900 hover:bg-selva-100"
+            className="flex h-11 items-center justify-center gap-2 rounded-xl border-[1.5px] border-selva-700 text-sm font-bold text-selva-900 hover:bg-arena-200"
           >
             <LocateFixed size={18} aria-hidden="true" />
             Usar mi ubicación actual
@@ -164,7 +164,7 @@ export function PublishEventForm() {
             </div>
           ))}
           {photos.length < MAX_PHOTOS && (
-            <label className="flex h-23 cursor-pointer flex-col items-center justify-center gap-1 rounded-[10px] border-[1.5px] border-dashed border-[#7d958c] bg-menta text-xs font-bold text-selva-900 focus-within:ring-2 focus-within:ring-selva-700/30">
+            <label className="flex h-23 cursor-pointer flex-col items-center justify-center gap-1 rounded-[10px] border-[1.5px] border-dashed border-[#a8a293] bg-arena text-xs font-bold text-selva-900 focus-within:ring-2 focus-within:ring-selva-700/30">
               <Plus size={22} aria-hidden="true" />
               Agregar foto
               <input type="file" accept="image/*" multiple className="sr-only" onChange={(e) => addPhotos(e.target.files)} />
@@ -187,7 +187,7 @@ export function PublishEventForm() {
       <button type="submit" className="h-13 rounded-xl bg-selva-700 text-base font-bold text-white hover:bg-selva-900">
         Enviar para revisión
       </button>
-      <div className="flex items-start gap-2.5 rounded-xl bg-celeste-100 px-3.5 py-3 text-[13px] leading-snug text-[#1d4c55]">
+      <div className="flex items-start gap-2.5 rounded-xl bg-celeste-100 px-3.5 py-3 text-[13px] leading-snug text-rio-900">
         <Info size={18} className="mt-px shrink-0" aria-hidden="true" />
         <span>
           ¿Quiere más visibilidad? Pida que su evento aparezca{" "}

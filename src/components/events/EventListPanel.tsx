@@ -25,7 +25,7 @@ export function EventListPanel({ events, selectedId, title, subtitle, onSelect }
       </div>
       <div className="flex-1 overflow-y-auto">
         {events.length === 0 && (
-          <p className="m-4 rounded-xl bg-menta px-4 py-6 text-center text-sm text-tinta-2">
+          <p className="m-4 rounded-xl bg-arena px-4 py-6 text-center text-sm text-tinta-2">
             No hay eventos en estas fechas. Pruebe con otro filtro.
           </p>
         )}
@@ -38,8 +38,8 @@ export function EventListPanel({ events, selectedId, title, subtitle, onSelect }
               aria-pressed={active}
               onClick={() => onSelect(event.id)}
               className={clsx(
-                "flex w-full gap-3.5 border-b border-l-4 border-b-[#eef2ea] px-4.5 py-3.5 text-left transition-colors hover:bg-menta",
-                active ? "border-l-selva-700 bg-selva-100" : "border-l-transparent",
+                "flex w-full gap-3.5 border-b border-l-4 border-b-[#efebe2] px-4.5 py-3.5 text-left transition-colors hover:bg-arena-200",
+                active ? "border-l-selva-700 bg-arena-200" : "border-l-transparent",
               )}
             >
               <DateTile event={event} className="h-14.5 w-13 justify-center border border-linea" />

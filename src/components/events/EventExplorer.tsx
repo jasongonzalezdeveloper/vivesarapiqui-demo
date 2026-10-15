@@ -47,8 +47,8 @@ export function EventExplorer() {
 
   return (
     <div className="flex h-[calc(100dvh-3.5rem)] flex-col lg:h-[calc(100dvh-4rem)]">
-      <DateFilterChips value={filter} counts={counts} onChange={changeFilter} />
       <FlagStripe />
+      <DateFilterChips value={filter} counts={counts} onChange={changeFilter} />
 
       <div className="flex min-h-0 flex-1 overflow-hidden lg:gap-6 lg:p-6">
         <SideAd variant="a" sticky={false} />

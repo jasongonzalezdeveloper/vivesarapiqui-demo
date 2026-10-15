@@ -49,7 +49,7 @@ export function SiteHeader() {
 
         <Link
           href="/publicar"
-          className="hidden h-11 items-center gap-2 rounded-xl bg-lima px-4 text-[15px] font-bold text-selva-900 hover:bg-[#d4e5a3] lg:flex"
+          className="hidden h-11 items-center gap-2 rounded-xl bg-white px-4 text-[15px] font-bold text-selva-900 hover:bg-arena lg:flex"
         >
           <Plus size={18} strokeWidth={2.4} aria-hidden="true" />
           Publicar evento
@@ -84,7 +84,7 @@ export function SiteHeader() {
                 type="button"
                 aria-label="Cerrar menú"
                 onClick={() => setOpen(false)}
-                className="flex size-11 items-center justify-center rounded-xl hover:bg-menta"
+                className="flex size-11 items-center justify-center rounded-xl hover:bg-arena-200"
               >
                 <X size={22} aria-hidden="true" />
               </button>
@@ -102,7 +102,7 @@ export function SiteHeader() {
                     aria-current={active ? "page" : undefined}
                     className={clsx(
                       "flex min-h-13 items-center gap-3.5 px-5 text-base",
-                      active ? "bg-selva-100 font-bold text-selva-900" : "font-semibold",
+                      active ? "bg-arena-200 font-bold text-selva-900" : "font-semibold",
                     )}
                   >
                     <Icon size={20} className="text-selva-700" aria-hidden="true" />

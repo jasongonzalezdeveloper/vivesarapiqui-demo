@@ -16,13 +16,13 @@ export function BottomAdBar({ fixed = true }: { fixed?: boolean }) {
     <aside
       aria-label="Publicidad"
       className={clsx(
-        "z-30 flex h-[62px] shrink-0 items-center justify-center border-t border-selva-950 bg-selva-900 md:h-[102px]",
+        "z-30 flex h-[62px] shrink-0 items-center justify-center border-t border-linea bg-arena-200 md:h-[102px]",
         fixed && "fixed inset-x-0 bottom-0",
       )}
     >
       <Link
         href="/contacto#anunciese"
-        className="relative flex h-[50px] w-[320px] items-center gap-2.5 rounded-md border border-dashed border-[#7d958c] bg-white px-2.5 md:h-[90px] md:w-[728px] md:gap-4 md:px-4"
+        className="relative flex h-[50px] w-[320px] items-center gap-2.5 rounded-md border border-dashed border-[#a8a293] bg-white px-2.5 md:h-[90px] md:w-[728px] md:gap-4 md:px-4"
       >
         <span className="absolute top-0.5 right-1.5 text-[9px] font-bold tracking-[0.08em] text-gris uppercase">
           Anuncio
@@ -57,7 +57,7 @@ export function SideAd({ variant = "a", sticky = true }: { variant?: "a" | "b"; 
       <Link
         href="/contacto#anunciese"
         className={clsx(
-          "flex w-40 flex-col overflow-hidden rounded-lg border border-dashed border-[#7d958c] bg-white",
+          "flex w-40 flex-col overflow-hidden rounded-lg border border-dashed border-[#a8a293] bg-white",
           sticky ? "h-[600px]" : "max-h-[600px] min-h-0 flex-1",
           variant === "b" && "flex-col-reverse",
         )}

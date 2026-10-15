@@ -15,7 +15,7 @@ export function DateFilterChips({
   return (
     <nav
       aria-label="Filtrar eventos por fecha"
-      className="no-scrollbar flex h-15 shrink-0 items-center gap-2 overflow-x-auto bg-selva-900 px-4 pb-1 lg:px-6"
+      className="no-scrollbar flex h-15 shrink-0 items-center gap-2 overflow-x-auto border-b border-linea bg-white px-4 lg:px-6"
     >
       {DATE_FILTERS.map((f) => {
         const active = f.id === value;
@@ -28,15 +28,15 @@ export function DateFilterChips({
             className={clsx(
               "flex h-10 shrink-0 items-center gap-2 rounded-full border pr-2 pl-3.5 text-sm font-semibold transition-colors",
               active
-                ? "border-lima bg-lima text-selva-900"
-                : "border-white/40 bg-white/[0.08] text-white hover:bg-white/15",
+                ? "border-selva-700 bg-selva-700 text-white"
+                : "border-[#d9d4c7] bg-white text-tinta hover:bg-arena",
             )}
           >
             {f.label}
             <span
               className={clsx(
-                "flex h-6 min-w-6 items-center justify-center rounded-full px-1.5 text-xs font-bold text-white",
-                active ? "bg-selva-900" : "bg-white/20",
+                "flex h-6 min-w-6 items-center justify-center rounded-full px-1.5 text-xs font-bold",
+                active ? "bg-white/20 text-white" : "bg-arena-200 text-tinta",
               )}
             >
               {counts ? counts[f.id] : "·"}

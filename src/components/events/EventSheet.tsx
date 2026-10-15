@@ -27,7 +27,7 @@ export function EventSheet({ events, selected, title, subtitle, onSelect, onClos
             type="button"
             aria-label="Cerrar detalle"
             onClick={onClose}
-            className="absolute top-1.5 right-2.5 flex size-11 items-center justify-center rounded-full bg-menta"
+            className="absolute top-1.5 right-2.5 flex size-11 items-center justify-center rounded-full bg-arena"
           >
             <X size={18} strokeWidth={2.4} aria-hidden="true" />
           </button>
@@ -53,7 +53,7 @@ export function EventSheet({ events, selected, title, subtitle, onSelect, onClos
             <span className="text-[13px] font-semibold text-gris">{subtitle}</span>
           </div>
           {events.length === 0 ? (
-            <p className="mx-4 rounded-xl bg-menta px-4 py-6 text-center text-sm text-tinta-2">
+            <p className="mx-4 rounded-xl bg-arena px-4 py-6 text-center text-sm text-tinta-2">
               No hay eventos en estas fechas. Pruebe con otro filtro.
             </p>
           ) : (
@@ -63,7 +63,7 @@ export function EventSheet({ events, selected, title, subtitle, onSelect, onClos
                   key={event.id}
                   type="button"
                   onClick={() => onSelect(event.id)}
-                  className="flex w-68 shrink-0 snap-start gap-3 rounded-[14px] border border-linea bg-menta p-2.5 text-left"
+                  className="flex w-68 shrink-0 snap-start gap-3 rounded-[14px] border border-linea bg-arena p-2.5 text-left"
                 >
                   <PhotoPlaceholder className="flex h-25 w-19 shrink-0 items-end rounded-[10px] p-1.5">
                     <DateTile event={event} />

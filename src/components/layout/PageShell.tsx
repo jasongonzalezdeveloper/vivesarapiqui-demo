@@ -30,7 +30,7 @@ export function PageShell({ children, ads = true }: { children: ReactNode; ads?:
 export function PageIntro({ eyebrow, title, children }: { eyebrow?: string; title: string; children?: ReactNode }) {
   return (
     <div className="flex flex-col gap-2.5">
-      {eyebrow && <span className="text-xs font-bold tracking-[0.08em] text-selva-700 uppercase">{eyebrow}</span>}
+      {eyebrow && <span className="text-xs font-bold tracking-[0.08em] text-rio uppercase">{eyebrow}</span>}
       <h1 className="font-display text-[32px] leading-[1.05] font-extrabold tracking-tight lg:text-[40px]">{title}</h1>
       {children && <p className="text-base leading-relaxed text-tinta-2">{children}</p>}
     </div>
