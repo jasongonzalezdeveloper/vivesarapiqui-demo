@@ -1,0 +1,87 @@
+"use client";
+
+import { X } from "lucide-react";
+import type { EventView } from "@/lib/eventView";
+import { PhotoPlaceholder } from "@/components/ui/PhotoPlaceholder";
+import { CategoryLabel, DateTile, DayBadge, EventActions, EventFacts, PhotoStrip } from "./EventBits";
+
+type Props = {
+  events: EventView[];
+  selected: EventView | null;
+  title: string;
+  subtitle: string;
+  onSelect: (id: string) => void;
+  onClose: () => void;
+};
+
+/** Panel inferior del mapa en el teléfono: lista horizontal o detalle del evento elegido. */
+export function EventSheet({ events, selected, title, subtitle, onSelect, onClose }: Props) {
+  return (
+    <section
+      aria-label={selected ? "Detalle del evento" : "Lista de eventos"}
+      className="absolute inset-x-0 bottom-0 z-30 rounded-t-[20px] bg-white pt-2 pb-3.5 shadow-[0_-6px_24px_rgb(16_48_42/0.16)] lg:hidden"
+    >
+      <div className="mx-auto mb-2.5 h-1 w-10 rounded-full bg-[#c9d3c4]" />
+
+      {selected ? (
+        <>
+          <button
+            type="button"
+            aria-label="Cerrar detalle"
+            onClick={onClose}
+            className="absolute top-1.5 right-2.5 flex size-11 items-center justify-center rounded-full bg-menta"
+          >
+            <X size={18} strokeWidth={2.4} aria-hidden="true" />
+          </button>
+          <div className="flex h-8 items-center gap-2 px-4">
+            <CategoryLabel>{selected.category}</CategoryLabel>
+            <DayBadge event={selected} />
+          </div>
+          <div className="px-4 pt-1">
+            <PhotoStrip event={selected} />
+          </div>
+          <div className="flex flex-col gap-2 px-4 pt-3">
+            <h2 className="font-display text-[22px] leading-tight font-extrabold tracking-tight">{selected.name}</h2>
+            <EventFacts event={selected} />
+            <div className="mt-1.5">
+              <EventActions event={selected} />
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="flex items-baseline justify-between px-4 pb-2.5">
+            <h2 className="font-display text-[19px] font-extrabold tracking-tight">{title}</h2>
+            <span className="text-[13px] font-semibold text-gris">{subtitle}</span>
+          </div>
+          {events.length === 0 ? (
+            <p className="mx-4 rounded-xl bg-menta px-4 py-6 text-center text-sm text-tinta-2">
+              No hay eventos en estas fechas. Pruebe con otro filtro.
+            </p>
+          ) : (
+            <div className="no-scrollbar flex snap-x gap-2.5 overflow-x-auto px-4 pb-0.5">
+              {events.map((event) => (
+                <button
+                  key={event.id}
+                  type="button"
+                  onClick={() => onSelect(event.id)}
+                  className="flex w-68 shrink-0 snap-start gap-3 rounded-[14px] border border-linea bg-menta p-2.5 text-left"
+                >
+                  <PhotoPlaceholder className="flex h-25 w-19 shrink-0 items-end rounded-[10px] p-1.5">
+                    <DateTile event={event} />
+                  </PhotoPlaceholder>
+                  <span className="flex min-w-0 flex-col gap-1">
+                    <CategoryLabel>{event.category}</CategoryLabel>
+                    <span className="text-[15px] leading-tight font-bold">{event.name}</span>
+                    <span className="text-[13px] text-gris">{event.when}</span>
+                    <span className="text-[13px] text-gris">{event.place}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+          )}
+        </>
+      )}
+    </section>
+  );
+}

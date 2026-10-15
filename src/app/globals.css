@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Paleta Vive Sarapiquí: bandera del cantón + verde selva + rojo rana */
+@theme {
+  --color-selva-950: #0a3a2e;
+  --color-selva-900: #0f4a3b;
+  --color-selva-700: #1e7b66;
+  --color-selva-100: #e2eedb;
+  --color-lima: #c7db8f;
+  --color-celeste: #8fd3de;
+  --color-celeste-100: #e3f2f4;
+  --color-rana: #c8432a;
+  --color-menta: #edf4e8;
+  --color-tinta: #10302a;
+  --color-tinta-2: #2d4741;
+  --color-gris: #4a5e58;
+  --color-linea: #d6e2ce;
+  --color-mapa: #ddebd0;
+  --color-bosque: #bcd8a4;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    background: var(--color-menta);
+    color: var(--color-tinta);
+    font-family: var(--font-sans);
+  }
+
+  a {
+    color: inherit;
+  }
+}
+
+@utility photo-placeholder {
+  background-color: #d9e8cc;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(30 123 102 / 0.13) 0 8px,
+    transparent 8px 16px
+  );
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
